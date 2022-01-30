@@ -1,7 +1,8 @@
 import './navbar.css'
 
 export const NavBar=()=>{
-return(<div className='barra'>
+return(
+<div className='barra'>
     <h1>Tienda</h1>
     <nav className = "menu_options">
         <p className = "menu_options_links">Uñas postizas</p>
