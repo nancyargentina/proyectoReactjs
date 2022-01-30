@@ -1,13 +1,15 @@
+import './encabezado.css';
+
 const Encabezado = () =>{
     return(
         <header>
             <nav className="navbar navbar-expand-md navbar-dark">  
                 <div className="container-fluid">
-                    <div class="navbar-brand">
-                        <a className="menu__item__link" href="./index.html"><img class="logo" src="./images/logo.png" alt="Logo"/></a>
+                    <div className="navbar-brand">
+                        <a className="menu__item__link" href="./index.html"><img className="logo" src="./images/logo.png" alt="Logo"/></a>
                     </div>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span classNAme="menu">Menú</span>
+                        <span className="menu">Menú</span>
                     </button>
                     <div className="collapse navbar-collapse justify-content-end"id="navbarNav">
                         <ul className="navbar-nav menu text-end">

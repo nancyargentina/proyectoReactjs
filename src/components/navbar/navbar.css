@@ -1,0 +1,21 @@
+.barra {
+   width: 100%;
+   background-color: #ff7fe3;
+   display: flex;
+   justify-content: space-between;
+}
+.menu_options {
+    list-style-type: none;
+}
+.menu_options_links {
+    text-decoration: none;
+    font-family: 'Bebas Neue', sans-serif;
+}
+a:hover {
+    color: #ff7fe3; 
+}
+
+h1 {
+    font-family: "Yellowtail", cursive;
+    text-shadow: 1px 1px 2px #7157ce;
+}

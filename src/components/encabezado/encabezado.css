@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  box-sizing: border-box;}
+/*  estilo para el menu de navegación */
+.menu {
+    list-style-type: none;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 16px;
+    color: beige;
+    /*margin: 16px;*/ }
+  
+  .menu__item__link {
+    text-decoration: none;
+    color: beige;
+    font-family: 'Bebas Neue', sans-serif; }
+  
+  a:hover {
+    color: #ff7fe3; }
+  
+  header {
+      background-color: black; }
+  .logo {
+    width: 150px; }
+  /*  fin estilo de menu de navegación  */

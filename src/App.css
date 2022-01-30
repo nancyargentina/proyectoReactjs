@@ -5,28 +5,7 @@
   
 a {
   text-decoration: none; }
-/*  estilo para el menu de navegación */
-.menu {
-  list-style-type: none;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 16px;
-  color: beige;
-  margin: 16px; }
 
-.menu__item__link {
-  text-decoration: none;
-  color: beige;
-  font-family: 'Bebas Neue', sans-serif; }
-
-a:hover {
-  color: #ff7fe3; }
-
-header {
-    background-color: black; }
-.navBar {background-color: #1f1f1f;}
-.logo {
-  width: 100px; }
-/*  fin estilo de menu de navegación  */
 
 
 
