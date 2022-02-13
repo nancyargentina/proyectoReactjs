@@ -7,6 +7,7 @@ import { Contacto } from './components/pages/Contacto';
 import {Galeria} from './components/pages/Galeria';
 import {UnPocoDeMi} from './components/pages/UnPocoDeMi';
 import {EstilosNail}from './components/pages/EstilosNail'
+import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
 
 function App() {
   return (
@@ -14,11 +15,14 @@ function App() {
       <Encabezado></Encabezado>
       <NavBar></NavBar>
       <Routes>
-        <Route path={'/'}element={<ItemListContainer></ItemListContainer>}></Route>
-        <Route path={'/galeria'}element={<Galeria></Galeria>}></Route>
-        <Route path={'/unPocoDeMi'}element={<UnPocoDeMi></UnPocoDeMi>}></Route>
-        <Route path={'/estilosNail'}element={<EstilosNail></EstilosNail>}></Route>
-        <Route path={'/contacto'}element={<Contacto></Contacto>}></Route>
+        <Route path='/Productos'element={<ItemListContainer></ItemListContainer>}></Route>
+        <Route path='/'element={<ItemListContainer></ItemListContainer>}></Route>
+        <Route path='/productos/:catId' element={<ItemListContainer/>}></Route>
+        <Route path='/detalle/:itemId' element={<ItemDetailContainer/>}></Route>
+        <Route path='/galeria'element={<Galeria></Galeria>}></Route>
+        <Route path='/unPocoDeMi'element={<UnPocoDeMi></UnPocoDeMi>}></Route>
+        <Route path='/estilosNail'element={<EstilosNail></EstilosNail>}></Route>
+        <Route path='/contacto'element={<Contacto></Contacto>}></Route>
         <Route path='*' element={<Navigate to='/'/>}></Route>
       </Routes>
       
