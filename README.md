@@ -1,3 +1,17 @@
+# _ reactjs-nailart-tienda-martineznc _
+_ repositorio de desafios entregables _
+```# Proyecto: Zoe nailart tienda. Tienda de productos de una nailartist.
+
+## Alumno: Nancy Carolina Martinez
+
+#### Profesor: Conrado Lanusse
+#### Comisión:24895
+#### Tutor: Ramiro D' Accorso
+### Descripción:
+En el curso de Desarrollo Web creé un sitio web para artista de uñas que quiere dar a conocer sus trabajos en el sector de belleza. Continuando con la misma idea, 
+para este curso agrego una página como tienda enlinea. Allí, el usuario puede elegir productos relacionados con la manicura.
+```
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
