@@ -1,6 +1,6 @@
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
-import { pedirDatos } from "../../helpers/accesoADatos"
+import { pedirDatosporId } from "../../helpers/accesoADatos"
 import {ProductoDetalle} from '../ProductoDetalle/ProductoDetalle'
 
 export const ItemDetailContainer = () =>{
@@ -12,14 +12,13 @@ export const ItemDetailContainer = () =>{
 
     useEffect(()=>{
         setCargando(true)
-        pedirDatos()
+        pedirDatosporId(itemId)
             .then((res)=>{
-                setProducto( res.find( (ele)=> ele.id === Number(itemId) ) )
+                setProducto( res )
             })
             .finally(()=>{setCargando(false)})
 
     },[])
-
     return (
         <>
         {

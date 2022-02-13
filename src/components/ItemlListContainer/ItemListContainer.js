@@ -6,11 +6,11 @@ import { useParams } from "react-router-dom"
 export const ItemListContainer = () => {
     const [productos,setProductos]= useState([])
     const [cargando,setCargando]=useState(false)
-    
+    let noHayProductos=false
     const {catId} = useParams()
 
     useEffect(()=>{
-        setCargando(true)
+       setCargando(true)
        pedirDatos()
         .then( (res)=>{
             if(catId){
@@ -26,13 +26,17 @@ export const ItemListContainer = () => {
         })
         .finally(()=>{
             setCargando(false)
+            
         })    
     },[catId])
+    productos.length===0 ? noHayProductos=true:noHayProductos=false
+    
 
     return (
         <>
             {
-                cargando ? <h2>Cargando</h2>: <ItemList productos={productos}/>
+                
+                cargando ? <h2>Cargando</h2>: (noHayProductos? <h2>No hay productos</h2>: <ItemList productos={productos}/>)
             }
             
         </>

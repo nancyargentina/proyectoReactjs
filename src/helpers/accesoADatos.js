@@ -6,3 +6,9 @@ export const pedirDatos = () =>{
         },2000)
     })
 }
+
+export const pedirDatosporId=(prodId)=>{
+    return new Promise( (resolve,reject)=>{
+           resolve( stock.find((ele)=> ele.id === Number(prodId)) ) 
+    })
+}
