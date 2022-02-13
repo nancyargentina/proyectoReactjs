@@ -7,6 +7,7 @@ export const ItemListContainer = () => {
     const [cargando,setCargando]=useState(false)
     
     useEffect(()=>{
+        setCargando(true)
        pedirDatos()
         .then( (res)=>{
             setProductos(res)
@@ -15,13 +16,16 @@ export const ItemListContainer = () => {
             console.log(err)
         })
         .finally(()=>{
-            console.log('Fin de proceso')
+            setCargando(false)
         })    
     },[])
 
     return (
         <>
-            <ItemList productos={productos}/>
+            {
+                cargando ? <h2>Cargando</h2>: <ItemList productos={productos}/>
+            }
+            
         </>
     )
 }
