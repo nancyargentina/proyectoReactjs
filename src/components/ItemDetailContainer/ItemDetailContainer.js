@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
 import { pedirDatosporId } from "../../helpers/accesoADatos"
-import {ProductoDetalle} from '../ItemDetail/ItemDetail'
+import {ItemDetail} from '../ItemDetail/ItemDetail'
 
 export const ItemDetailContainer = () =>{
     
@@ -22,7 +22,7 @@ export const ItemDetailContainer = () =>{
     return (
         <>
         {
-            cargando ? <h2>Cargando...</h2>: <ProductoDetalle {...producto}/>
+            cargando ? <h2>Cargando...</h2>: <ItemDetail {...producto}/>
         }
         
     </>

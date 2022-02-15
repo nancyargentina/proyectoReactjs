@@ -16,11 +16,19 @@ function App() {
   const [cart, setCart]= useState([])
 
   const isInCart=(unId)=>{
-    return cart.some( (item)=>item.prod.id===unId )  
+    return cart.some( (item)=>item.producto.id===unId )  
   }
-  const addItem= ( prod, cant ) => {
-      !isInCart(prod.id)&& setCart( [...cart,{'prod':prod,cant}] ) //agrego  
-  
+
+  const addItem = ( prod, unidades ) => {
+    //la consigna solicita guardar{item,cantidad}
+    const item = {  
+      producto: prod,
+      cant: unidades
+    }
+    
+    if ( !isInCart(prod.id) ){
+      setCart( [...cart,item] )   
+    }
   }
   const clear =()=>{
     //remover todos los productos del carrito
