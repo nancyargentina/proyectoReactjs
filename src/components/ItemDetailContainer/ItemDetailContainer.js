@@ -1,7 +1,7 @@
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
 import { pedirDatosporId } from "../../helpers/accesoADatos"
-import {ProductoDetalle} from '../ProductoDetalle/ProductoDetalle'
+import {ProductoDetalle} from '../ItemDetail/ItemDetail'
 
 export const ItemDetailContainer = () =>{
     

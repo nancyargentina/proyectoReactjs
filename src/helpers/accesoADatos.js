@@ -1,4 +1,4 @@
-import { stock } from "../components/data/stock"
+import { stock } from "../data/stock"
 export const pedirDatos = () =>{
     return new Promise( (resolve, reject)=>{
         setTimeout(()=>{

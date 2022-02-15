@@ -8,10 +8,32 @@ import {Galeria} from './components/pages/Galeria';
 import {UnPocoDeMi} from './components/pages/UnPocoDeMi';
 import {EstilosNail}from './components/pages/EstilosNail'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
+import {cartContext} from './context/cartContext'
+import { useState } from 'react';
 
 function App() {
+
+  const [cart, setCart]= useState([])
+
+  const isInCart=(unId)=>{
+    return cart.some( (item)=>item.prod.id===unId )  
+  }
+  const addItem= ( prod, cant ) => {
+      !isInCart(prod.id)&& setCart( [...cart,{'prod':prod,cant}] ) //agrego  
+  
+  }
+  const clear =()=>{
+    //remover todos los productos del carrito
+  }
+  const removeItem=(itemId)=>{
+    //remover el item específico cel carrito
+  }
+
+  
+
   return (
-    <BrowserRouter>
+    <cartContext.Provider value={ {cart,addItem, isInCart} }>
+      <BrowserRouter>
       <Encabezado></Encabezado>
       <NavBar></NavBar>
       <Routes>
@@ -24,9 +46,9 @@ function App() {
         <Route path='/estilosNail'element={<EstilosNail></EstilosNail>}></Route>
         <Route path='/contacto'element={<Contacto></Contacto>}></Route>
         <Route path='*' element={<Navigate to='/'/>}></Route>
-      </Routes>
-      
+      </Routes> 
     </BrowserRouter>
+    </cartContext.Provider>
   );
 }
 
