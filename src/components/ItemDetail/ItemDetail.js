@@ -5,18 +5,14 @@ import { Link } from "react-router-dom"
 
 export const ItemDetail= ({id,nombre, descripcion, img, precio,stock,categoria})=>{
     const [cantidad, setCantidad]= useState(0)
-    const {cart,addItem, isInCart} = useContext(cartContext)
+    const {addItem, isInCart} = useContext(cartContext)
     
-
-    console.log(cart)
     const handleAgregar=()=>{
        // if (cantidad===0) return
        if (cantidad>0){
            const unItem= { id,nombre, precio,stock }
        
            addItem(unItem, cantidad)}
-
-
     }
   
     return (

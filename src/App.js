@@ -8,39 +8,14 @@ import {Galeria} from './components/pages/Galeria';
 import {UnPocoDeMi} from './components/pages/UnPocoDeMi';
 import {EstilosNail}from './components/pages/EstilosNail'
 import { ItemDetailContainer } from './components/ItemDetailContainer/ItemDetailContainer';
-import {cartContext} from './context/cartContext'
-import { useState } from 'react';
+import { CartProvider} from './context/cartContext'
+import { Cart } from './components/Cart/Cart';
+
 
 function App() {
 
-  const [cart, setCart]= useState([])
-
-  const isInCart=(unId)=>{
-    return cart.some( (item)=>item.producto.id===unId )  
-  }
-
-  const addItem = ( prod, unidades ) => {
-    //la consigna solicita guardar{item,cantidad}
-    const item = {  
-      producto: prod,
-      cant: unidades
-    }
-    
-    if ( !isInCart(prod.id) ){
-      setCart( [...cart,item] )   
-    }
-  }
-  const clear =()=>{
-    //remover todos los productos del carrito
-  }
-  const removeItem=(itemId)=>{
-    //remover el item específico cel carrito
-  }
-
-  
-
   return (
-    <cartContext.Provider value={ {cart,addItem, isInCart} }>
+    <CartProvider>
       <BrowserRouter>
       <Encabezado></Encabezado>
       <NavBar></NavBar>
@@ -49,14 +24,15 @@ function App() {
         <Route path='/'element={<ItemListContainer></ItemListContainer>}></Route>
         <Route path='/productos/:catId' element={<ItemListContainer/>}></Route>
         <Route path='/detalle/:itemId' element={<ItemDetailContainer/>}></Route>
+        <Route path='/cart' element= {<Cart/>}></Route>
         <Route path='/galeria'element={<Galeria></Galeria>}></Route>
         <Route path='/unPocoDeMi'element={<UnPocoDeMi></UnPocoDeMi>}></Route>
         <Route path='/estilosNail'element={<EstilosNail></EstilosNail>}></Route>
         <Route path='/contacto'element={<Contacto></Contacto>}></Route>
         <Route path='*' element={<Navigate to='/'/>}></Route>
       </Routes> 
-    </BrowserRouter>
-    </cartContext.Provider>
+      </BrowserRouter>
+    </CartProvider>
   );
 }
 
