@@ -4,16 +4,16 @@ import { CartProduct } from "../CartProduct/CartProduct"
 
 
 export const Cart = ()=>{
-    const {cart, cantidadCart, totalCart}= useContext(cartContext)
+    const {cart, cantidadCart, totalCart,clear}= useContext(cartContext)
     
     return(
     <>
-        <h2>Carrito</h2>
+        <h2>Tu carrito de compras</h2>
         <hr/>
         <section className="">
             <table className="table table-striped" >
                 <thead>
-                    <th colspan="4">Carrito</th>
+                    <th colspan="5">Carrito</th>
                 </thead>
                 <tr className="table-active">
                     <th>Producto</th>
@@ -22,12 +22,13 @@ export const Cart = ()=>{
                     <th>Subtotal</th>
                     </tr>   
                               
-        {cart.map( (ele)=> <CartProduct key={ele.producto.id} nombre={ele.producto.nombre} precio={ele.producto.precio} cantidad={ele.cant} subTotal={ele.producto.precio * ele.cant} />)}
+        {cart.map( (ele)=> <CartProduct key={ele.producto.id} {...ele.producto} cantidad={ele.cant} subTotal={ele.producto.precio * ele.cant}/>)}
              
             </table>
         </section>
         <p>Cantidad de Items: {cantidadCart()}</p>
         <p>Precio Total: ${totalCart()}</p>
+        <button onClick={clear} className="btn btn-primary">Vaciar Carrito</button>
     </>
     )
 }

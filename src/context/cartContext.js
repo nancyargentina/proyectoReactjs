@@ -22,27 +22,28 @@ export const CartProvider=( {children} )=>{
       }
     }
     const cantidadCart =()=>{
-
         return(
             cart.reduce( (acum,item) => acum + item.cant, 0 )
-          
         )
     }
     const totalCart =()=>{
+      //precio total de todos los productos * cantidad
         return(
             cart.reduce( (suma, item)=> suma + (item.producto.precio * item.cant), 0)
         )
     }
     const clear =()=>{
-      //remover todos los productos del carrito
+      //elimina todos los items
+      setCart([])
     }
-    const removeItem=(itemId)=>{
-      //remover el item específico cel carrito
+    const removeItem=(id)=>{
+      //remover el item específico del carrito
+      setCart( cart.filter( (item)=>item.producto.id!==id ) )
     }
 
   return (
       <cartContext.Provider value={ 
-        {cart, addItem, isInCart, cantidadCart, totalCart}
+        {cart, addItem, isInCart, cantidadCart, totalCart,clear,removeItem}
       }>
         {children}
       </cartContext.Provider>  
