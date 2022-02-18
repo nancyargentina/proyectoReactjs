@@ -35,6 +35,9 @@ export const ItemDetail= ({id,nombre, descripcion, img, precio,stock,categoria})
                     </>
                 }
             </div>
+            <Link to="/">
+				<button className="btn btn-success m-1">Volver</button>
+			</Link>
         </div>
     )
 }

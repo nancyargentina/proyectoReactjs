@@ -17,7 +17,7 @@ const Encabezado = () =>{
                           <li className="nav-item"><Link className="menu__item__link" to="/estilosNail">Estilos</Link> |</li>
                           <li className="nav-item"><Link className="menu__item__link" to="/galeria">Galería</Link> |</li>
                           <li className="nav-item"><Link className="menu__item__link" to="/unPocoDeMi">Un poco de mí</Link> |</li>
-                          <li className="nav-item"><Link className="menu__item__link" to="/Productos">Tienda</Link> |</li>
+                          <li className="nav-item"><Link className="menu__item__link" to="/Tienda">Tienda</Link> |</li>
                           <li className="nav-item"><Link className="menu__item__link" to="/contacto">Contacto</Link> </li>
                         </ul>
                    </div>
