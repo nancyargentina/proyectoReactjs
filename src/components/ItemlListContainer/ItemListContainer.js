@@ -3,6 +3,7 @@ import { pedirDatos } from "../../helpers/accesoADatos"
 import { ItemList } from "../ItemList/ItemList"
 import {NavBar} from "../navbar/NavBar"
 import { useParams } from "react-router-dom"
+import './ItemListContainer.css'
 export const ItemListContainer = () => {
     const [productos,setProductos]= useState([])
     const [cargando,setCargando]=useState(false)
@@ -34,11 +35,12 @@ export const ItemListContainer = () => {
     
 
     return (
-        <>  <NavBar/>  
-            {        
-                cargando ? <h2>Cargando</h2>: (noHayProductos? <h2>No hay productos</h2>: <ItemList productos={productos}/>)
-            }
-            
+        <>  <NavBar/> 
+            <div className="main">
+                {        
+                    cargando ? <h2>Cargando</h2>: (noHayProductos? <h2>No hay productos</h2>: <ItemList productos={productos}/>)
+                }
+            </div>
         </>
     )
 }

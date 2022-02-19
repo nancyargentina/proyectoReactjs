@@ -1,7 +1,10 @@
+import './ItemDetail.css';
+import '../../vendor/animate.css'
 import { useState, useContext } from "react"
 import { cartContext } from "../../context/cartContext"
 import {ItemCount} from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
+import {BsFillCartFill} from "react-icons/bs";
 
 export const ItemDetail= ({id,nombre, descripcion, img, precio,stock,categoria})=>{
     const [cantidad, setCantidad]= useState(0)
@@ -16,28 +19,32 @@ export const ItemDetail= ({id,nombre, descripcion, img, precio,stock,categoria})
     }
   
     return (
-        <div style={{width:"50rem",display:"flex",justifyContent:"center" }}>
-            <img src={img} alt={nombre} style={{maxWidth:"500px"}}/>
-            <div className="card-body">
-                <h5 className="card-title">{nombre}</h5>
-                <p className="card-text">{descripcion}</p>
-                <p className="card-text">Precio: ${precio}</p>
-                <p className="card-text">Stock: {stock}</p>
-                <p className="card-text">Categoría: {categoria}</p>
-                
-                {   isInCart(id) ?
-                        <Link to="/cart"><button className="btn btn-primary">Terminar mi compra</button></Link>
-                    :   
-                    <>
-                        <ItemCount max={stock}min={0} counter={cantidad} setCounter={setCantidad}/>
-
-                        <button className="btn btn-primary" onClick={handleAgregar}>Comprar</button>
-                    </>
-                }
+        <div className="container dark-grey-text mt-5">
+            <div className="row fade-up">
+                <div className="col-md-6 mb-4">
+                    <img className="img-fluid" src={img} alt={nombre} style={{maxWidth:"500px"}}/>
+                </div>
+                <div className="col-md-6 mb-4">
+                    <div className=" portfolio-info p-4">
+                        <div className="mb-3">
+                            <Link to={`/tienda/${categoria}`}><span className="badge rounded-pill purple">{categoria}</span></Link>
+                        </div>
+                        <p className="lead"><span>$100</span></p>
+                        <p className="lead font-weight-bold">{nombre}</p>
+                        <p>{descripcion}</p>
+                        {   isInCart(id) ?
+                            <Link to="/cart"><button className="btn btn-success">Terminar mi compra</button></Link>
+                        :   
+                        <>
+                            <ItemCount max={stock}min={0} counter={cantidad} setCounter={setCantidad}/>
+                            <button className="btn btn-success" onClick={handleAgregar}>Comprar <BsFillCartFill/></button>
+                        </>
+                        }
+                    </div>
+                    <div className='text-center'><Link to="/"><button className="btn btn-primary m-1">Volver</button></Link></div>
+                    
+                </div>
             </div>
-            <Link to="/">
-				<button className="btn btn-success m-1">Volver</button>
-			</Link>
         </div>
     )
 }

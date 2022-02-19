@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+
 .barra {
    width: 100%;
    background-color: #ff7fe3;
@@ -16,11 +23,16 @@
     text-decoration: none;
     font-family: 'Bebas Neue', sans-serif;
 }
-a:hover {
-    color: #ff7fe3; 
-}
+.link{
+    text-decoration: none;
+    color:black;
 
-h1 {
+}
+a:hover {
+    color: #7157ce; 
+}
+h2 {
+    text-decoration: none;
     font-family: "Yellowtail", cursive;
     text-shadow: 1px 1px 2px #7157ce;
     font-size: 8vh;
