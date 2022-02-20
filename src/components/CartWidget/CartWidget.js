@@ -5,14 +5,15 @@ import { cartContext } from "../../context/cartContext";
 import { Link } from "react-router-dom";
 
 export const CartWidget =()=>{
-    const {cantidadCart} = useContext(cartContext)
+    const {cart, cantidadCart} = useContext(cartContext)
     return(
+        <div style={{visibility: cart.length > 0 ? 'visible': 'hidden'}} >
         <Link to="/cart">
             <IconContext.Provider value={{ color: "purple", size:"30px" }}>
-                <BsFillCartFill/>
+                <BsFillCartFill/>               
                 <span className="badge top-0 start-100 translate-middle bg-secondary border border-light">{ cantidadCart()}</span>
             </IconContext.Provider>
-
         </Link>
+        </div>
     )
 }

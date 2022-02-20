@@ -1,9 +1,10 @@
 import {useEffect, useState} from "react"
 import { pedirDatos } from "../../helpers/accesoADatos"
 import { ItemList } from "../ItemList/ItemList"
-import {NavBar} from "../navbar/NavBar"
 import { useParams } from "react-router-dom"
 import './ItemListContainer.css'
+import { Loader } from "../Loader/Loader"
+import {SinProds} from '../noProd/SinProds'
 export const ItemListContainer = () => {
     const [productos,setProductos]= useState([])
     const [cargando,setCargando]=useState(false)
@@ -35,10 +36,12 @@ export const ItemListContainer = () => {
     
 
     return (
-        <>  <NavBar/> 
-            <div className="main">
-                {        
-                    cargando ? <h2>Cargando</h2>: (noHayProductos? <h2>No hay productos</h2>: <ItemList productos={productos}/>)
+        <>  
+            <div className="main">               
+                { cargando ?      
+                    <Loader /> //Cartel mientras se recuperan 
+                    : noHayProductos ? <SinProds/>  //CArtel Si no existen coincidencias del filtro
+                    : <ItemList productos={productos}/>
                 }
             </div>
         </>

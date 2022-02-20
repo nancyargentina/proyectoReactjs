@@ -10,13 +10,14 @@ import {ItemListContainer} from './components/ItemlListContainer/ItemListContain
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer'
 import {Cart} from './components/Cart/Cart'
 import Footer from './components/Footer/Footer';
-
+import{NavBar} from './components/navbar/NavBar'
 function App() {
 
   return (
     <CartProvider>
       <BrowserRouter>
       <Encabezado></Encabezado>
+      <NavBar/> 
       <Routes>
         <Route exact path='galeria' element={<Galeria></Galeria>}/>
         <Route exact path='unPocoDeMi'element={<UnPocoDeMi></UnPocoDeMi>}/>

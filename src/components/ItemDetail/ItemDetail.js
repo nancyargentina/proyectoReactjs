@@ -4,7 +4,7 @@ import { useState, useContext } from "react"
 import { cartContext } from "../../context/cartContext"
 import {ItemCount} from "../ItemCount/ItemCount"
 import { Link } from "react-router-dom"
-import {BsFillCartFill} from "react-icons/bs";
+import {BsCartPlus} from "react-icons/bs";
 
 export const ItemDetail= ({id,nombre, descripcion, img, precio,stock,categoria})=>{
     const [cantidad, setCantidad]= useState(0)
@@ -37,7 +37,7 @@ export const ItemDetail= ({id,nombre, descripcion, img, precio,stock,categoria})
                         :   
                         <>
                             <ItemCount max={stock}min={0} counter={cantidad} setCounter={setCantidad}/>
-                            <button className="btn btn-success" onClick={handleAgregar}>Comprar <BsFillCartFill/></button>
+                            <button className="btn btn-success" onClick={handleAgregar}>Comprar <BsCartPlus/></button>
                         </>
                         }
                     </div>

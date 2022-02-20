@@ -28,7 +28,8 @@
     color:black;
 
 }
-a:hover {
+
+.link:hover {
     color: #7157ce; 
 }
 h2 {
