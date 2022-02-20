@@ -9,6 +9,7 @@ export const CartList=()=>{
     return(<>
         <section className="">
             <table className="table table-striped" >
+                <tbody>
                 <tr className="table-active">
                     <th>Producto</th>
                     <th>Precio Unitario</th>
@@ -17,7 +18,7 @@ export const CartList=()=>{
                     </tr>   
                               
         {cart.map( (ele)=> <CartProduct key={ele.producto.id} {...ele.producto} cantidad={ele.cant} subTotal={precioItems(ele)}/>)}
-             
+        </tbody>
             </table>
         </section>
 

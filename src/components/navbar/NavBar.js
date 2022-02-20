@@ -1,8 +1,12 @@
 import './navbar.css'
-import {Link} from 'react-router-dom'
+import {Link, Outlet} from 'react-router-dom'
 import { CartWidget } from '../CartWidget/CartWidget'
+
 export const NavBar=()=>{
-return(
+
+    
+
+return(<>
 <div className='barra'>
     <Link to="/tienda" className='link '><h2>Tienda</h2></Link>
     <nav className = "menu_options">
@@ -13,8 +17,9 @@ return(
         
     </nav>
     <CartWidget/>
-
 </div>
+<Outlet/>
+</>
 
 )
 }
