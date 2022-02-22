@@ -1,19 +1,49 @@
 import {useEffect, useState} from "react"
-import { pedirDatos } from "../../helpers/accesoADatos"
+//import { pedirDatos } from "../../helpers/accesoADatos"
 import { ItemList } from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
 import './ItemListContainer.css'
 import { Loader } from "../Loader/Loader"
 import {SinProds} from '../noProd/SinProds'
+//import { usePedirDatos } from "../../helpers/usePedirDatos"
+import {db} from "../../data/config"
+import {collection, getDocs, query,where} from "firebase/firestore"
+
 export const ItemListContainer = () => {
     const [productos,setProductos]= useState([])
+    
     const [cargando,setCargando]=useState(false)
     let noHayProductos=false
     const {catId} = useParams()
-
+    
     useEffect(()=>{
+        setCargando(true)
+        const snapCollection= collection(db,'Productos')
+        const consulta=( catId
+            ? query( snapCollection, where('categoria','==',catId) ) 
+            : snapCollection)
+        getDocs(consulta)
+        .then(    
+            (snapProductos) =>{ 
+                // "de cada objeto del array saco el objeto producto y armo un nuevo array Productos
+                setProductos (snapProductos.docs.map( (documento) => ({id:documento.id, ...documento.data() })))
+            }
+             
+        )
+        .catch((err)=>{
+            console.log(err)
+        })
+        .finally(()=>{
+            setCargando(false)
+            
+        })    
+
+    },[catId])
+
+  /*  useEffect(()=>{
        setCargando(true)
-       pedirDatos()
+       productos = usePedirDatos()
+       /*pedirDatos()
         .then( (res)=>{
             if(catId){
                 setProductos(
@@ -24,14 +54,12 @@ export const ItemListContainer = () => {
             }
 
         })
-        .catch((err)=>{
-            console.log(err)
-        })
+        .catch((err)=>{ console.log(err) })
         .finally(()=>{
             setCargando(false)
             
         })    
-    },[catId])
+    },[catId])*/
     productos.length===0 ? noHayProductos=true:noHayProductos=false
     
 

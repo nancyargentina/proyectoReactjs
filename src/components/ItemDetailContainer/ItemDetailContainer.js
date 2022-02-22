@@ -1,7 +1,9 @@
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
-import { pedirDatosporId } from "../../helpers/accesoADatos"
+//import { pedirDatosporId } from "../../helpers/accesoADatos"
 import {ItemDetail} from '../ItemDetail/ItemDetail'
+import {db} from "../../data/config"
+import {doc, getDoc} from "firebase/firestore"
 
 export const ItemDetailContainer = () =>{
     
@@ -12,10 +14,15 @@ export const ItemDetailContainer = () =>{
 
     useEffect(()=>{
         setCargando(true)
-        pedirDatosporId(itemId)
+        const snapProducto= doc(db,'Productos',itemId)
+        getDoc(snapProducto)
+            .then((doc)=>{
+                setProducto({id:doc.id,...doc.data()})
+            })
+        /*pedirDatosporId(itemId)
             .then((res)=>{
                 setProducto( res )
-            })
+            })*/
             .finally(()=>{setCargando(false)})
 
     },[])
