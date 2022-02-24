@@ -1,4 +1,10 @@
+import './pagesStyles.css'
+
 export const Contacto=() =>{
-    return(<h2>Contacto</h2>)
+    return(
+    <div className="encabezado">    
+        <h1 className="encabezado__titulo">Contacto</h1>
+    </div>
+)
 
 }

@@ -33,15 +33,15 @@ export const ItemDetail= ({id,nombre, descripcion, img, precio,stock,categoria})
                         <p className="lead font-weight-bold">{nombre}</p>
                         <p>{descripcion}</p>
                         {   isInCart(id) ?
-                            <Link to="/cart"><button className="btn btn-success">Terminar mi compra</button></Link>
+                            <Link to="/cart"><button className="btn btn-success indigo">Terminar mi compra</button></Link>
                         :   
                         <>
                             <ItemCount max={stock}min={0} counter={cantidad} setCounter={setCantidad}/>
-                            <button className="btn btn-success" onClick={handleAgregar}>Comprar <BsCartPlus/></button>
+                            <button className="btn btn-success indigo my-2" onClick={handleAgregar} >Comprar <BsCartPlus/></button>
                         </>
                         }
                     </div>
-                    <div className='text-center'><Link to="/"><button className="btn btn-primary m-1">Volver</button></Link></div>
+                    <div className='text-center'><Link to="/"><button className="btn btn-primary m-1 indigo">Volver</button></Link></div>
                     
                 </div>
             </div>

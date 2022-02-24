@@ -23,7 +23,11 @@
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .purple {
-  background-color: #9c27b0 !important; }
+  background-color: #9c27b0 !important;
+}
+.indigo{
+  background-color: #6610f2;
+}
 link.badge-primary:hover, link.badge-primary:focus {
   color: #fff;
   background-color: #0062cc;

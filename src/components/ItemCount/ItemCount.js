@@ -10,9 +10,9 @@ export const ItemCount = ({max, min=0, counter, setCounter})=>{
 
     return(
         <div>
-            <button className="btn btn-primary" onClick={handleRestar}>-</button>
+            <button className="btn btn-primary btn-sm" onClick={handleRestar}>-</button>
             <span className="mx-3">{counter}</span>
-            <button className="btn btn-primary" onClick={handleSumar}>+</button>
+            <button className="btn btn-primary btn-sm" onClick={handleSumar}>+</button>
         </div>
     )
 }

@@ -42,7 +42,6 @@ function App() {
           <Route eact path='/cart' element= {<Cart/>}></Route>
          </Route>
          <Route path="*" element={<Navigate to='/'/>}/> 
-  
       </Routes>
       </BrowserRouter>
       <Footer/>

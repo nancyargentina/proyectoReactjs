@@ -1,3 +1,9 @@
+import './pagesStyles.css'
+
 export const Galeria= ()=>{
-    return(<h2>Galeria</h2>)
+    return(
+    <div className="encabezado">    
+        <h1 className="encabezado__titulo">Galería</h1>
+    </div>
+)
 }

@@ -1,0 +1,70 @@
+/*  estilo para la cabecera de sección  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+    background-color: #1f1f1f;
+}
+.encabezado {
+    background-image: url("../../../public/images/ondatitulo.png");
+    background-size: 100% 25vh;
+    margin-bottom: 1%;
+    height: 25vh;
+    animation-name: zoomIn;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+}
+  
+.encabezado__titulo {
+    position: relative;
+    top: 4vh;
+}
+h1 {
+    font-family: "Yellowtail", cursive;
+    font-size: 10vh;
+    color: beige;
+    text-align: center;
+    text-shadow: 1px 1px 2px #7157ce;
+}
+      
+#portadatitulo {
+    size: 50vh;
+}
+      
+.section {
+    color: beige;
+    padding: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.seccion__imagen--medidas300 {
+    width: 300px;
+    height: 300px;
+}
+.seccion__imagen--medida400 {
+    width: 400px;
+}
+
+.articulo {
+    display: inline-block;
+    max-width: 50rem;
+    height: 40 rem;
+}
+  
+.articulo__titulo {
+    font-family: "Allison", cursive;
+    font-size: 4rem;
+    color: beige;
+}
+.itemLista {
+    font-family: Helvetica, sans-serif;
+    font-size: 14px;
+    color: beige;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
