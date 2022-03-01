@@ -40,26 +40,6 @@ export const ItemListContainer = () => {
 
     },[catId])
 
-  /*  useEffect(()=>{
-       setCargando(true)
-       productos = usePedirDatos()
-       /*pedirDatos()
-        .then( (res)=>{
-            if(catId){
-                setProductos(
-                    res.filter( (ele)=>ele.categoria=== catId)
-                    )
-            } else {
-                setProductos(res)
-            }
-
-        })
-        .catch((err)=>{ console.log(err) })
-        .finally(()=>{
-            setCargando(false)
-            
-        })    
-    },[catId])*/
     productos.length===0 ? noHayProductos=true:noHayProductos=false
     
 

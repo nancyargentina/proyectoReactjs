@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom"
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import {db} from "../../data/config"
 import {doc, getDoc} from "firebase/firestore"
+import { Loader} from '../Loader/Loader'
 
 export const ItemDetailContainer = () =>{
     
@@ -29,7 +30,7 @@ export const ItemDetailContainer = () =>{
     return (
         <>
         {
-            cargando ? <h2>Cargando...</h2>: <ItemDetail {...producto}/>
+            cargando ?  <Loader />: <ItemDetail {...producto}/>
         }
         
     </>

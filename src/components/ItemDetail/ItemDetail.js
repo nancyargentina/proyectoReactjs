@@ -13,8 +13,7 @@ export const ItemDetail= ({id,nombre, descripcion, img, precio,stock,categoria})
     const handleAgregar=()=>{
        // if (cantidad===0) return
        if (cantidad>0){
-           const unItem= { id,nombre, precio,stock }
-       
+           const unItem= { id,nombre, precio,stock }      
            addItem(unItem, cantidad)}
     }
   

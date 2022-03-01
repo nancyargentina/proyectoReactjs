@@ -4,11 +4,11 @@ import {SinProds} from '../noProd/SinProds'
 import { CartList } from "../CartList/CartList"
 
 export const Cart = ()=>{
-    const {cart, cantidadCart, totalCart,clear}= useContext(cartContext)
+    const {cart}= useContext(cartContext)
     
     return(
-    <div className="container margin-boton">
-        <h2>Tu carrito de compras</h2>
+    <div className="main container col-9 mx-auto">
+        <h2 className="text-center">Tu carrito de compras</h2>
         <hr/>
         {cart.length === 0
             ? <SinProds/>

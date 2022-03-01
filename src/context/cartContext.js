@@ -41,7 +41,7 @@ export const CartProvider = ( {children} ) =>{
         )
     }
 
-    //precio total de todos los productos del carritos
+    //precio total de todos los productos del carrito
     const totalCart =()=>{
         return(
             cart.reduce( (suma, item)=> suma + (item.producto.precio * item.cant), 0)

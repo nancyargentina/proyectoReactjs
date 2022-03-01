@@ -11,35 +11,28 @@ import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailCo
 import {Cart} from './components/Cart/Cart'
 import Footer from './components/Footer/Footer';
 import{NavBar} from './components/navbar/NavBar'
+import { Checkout } from './components/Checkout/Checkout';
 function App() {
 
   return (
     <CartProvider>
       <BrowserRouter>
       <Encabezado></Encabezado>
-      {/* <NavBar/>  */}
       <Routes>
         <Route exact path='galeria' element={<Galeria></Galeria>}/>
         <Route exact path='unPocoDeMi'element={<UnPocoDeMi></UnPocoDeMi>}/>
         <Route exact path='estilosNail'element={<EstilosNail></EstilosNail>}/>
         <Route exact path='contacto'element={<Contacto></Contacto>}/>   
-        {/* //rutas con MAin apuntando a ItemListContainer(TOdo es hijo de)
-        <Route exact path='/'element={<ItemListContainer/>}/>
-        <Route exact path='/tienda'element={<ItemListContainer/>}>
-            <Route path='/tienda:catId' element={<ItemListContainer/>}/></Route>
-        <Route exact path='/cart' element= {<Cart/>}></Route>
-        <Route exact path='/detalle/:itemId' element={<ItemDetailContainer/>}></Route> 
-        <Route path="*" element={<ItemListContainer/>}/>    */}
 
-
-        {/* rutas con MAin apuntando a NavBar(TOdo es hijo de) */}
+        {/* rutas con MAin apuntando a NavBar(Todo es hijo de) */}
         <Route exact path='/'element={<NavBar/>}>
           <Route index element={<ItemListContainer/>}/>
           <Route path='/tienda'element={<ItemListContainer/>}>
             <Route path='/tienda:catId' element={<ItemListContainer/>}/>
           </Route>
           <Route  path='/detalle/:itemId' element={<ItemDetailContainer/>}></Route>
-          <Route eact path='/cart' element= {<Cart/>}></Route>
+          <Route path='/cart' element= {<Cart/>}></Route>
+          <Route path='/checkout' element={<Checkout/>}/>
          </Route>
          <Route path="*" element={<Navigate to='/'/>}/> 
       </Routes>

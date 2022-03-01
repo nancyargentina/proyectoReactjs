@@ -12,9 +12,9 @@ export const CartList=()=>{
                 <tbody>
                 <tr className="table-active">
                     <th>Producto</th>
-                    <th>Precio Unitario</th>
-                    <th>cantidad</th>
-                    <th>Subtotal</th>
+                    <th className="text-center">Precio Unitario</th>
+                    <th className="text-center">cantidad</th>
+                    <th className="text-center">Subtotal</th>
                     <th></th>
                     </tr>   
                               
@@ -22,14 +22,15 @@ export const CartList=()=>{
         </tbody>
             </table>
         </section>
-
-        <p>Cantidad de Items: {cantidadCart()}</p>
-        <p>Precio Total: ${totalCart()}</p>
-        <button onClick={clear} className="btn btn-primary indigo">Vaciar Carrito</button>
-        <Link to="/"><button className="btn btn-primary mx-3 indigo">Seguir comprando</button>
-        </Link>
-		<button //onClick={() => { setShowForm(true) }}
-        className="btn btn-success mx-3 indigo">Finalizar compra</button>
+        <div className="hstack">
+            <p>Cantidad de Items: {cantidadCart()}</p>
+            <p className="ms-auto">Precio Total: ${totalCart()}</p>
+        </div>
+        <div className="hstack">
+            <button onClick={clear} className="btn btn-primary indigo">Vaciar Carrito</button>
+            <Link to="/" className="btn btn-primary mx-3 indigo">Seguir comprando</Link> 
+		    <Link to="/checkout" className="btn btn-success mx-3 indigo ms-auto">Finalizar compra</Link>
+        </div>
         </>
     )
 }
