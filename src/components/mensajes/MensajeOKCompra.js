@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 
-export const OrdenCompra=( {ordenId} )=>{ 
-
+export const MensajeOKCompra=( {ordenId,clearOrderId} )=>{ 
+    clearOrderId()
     return( <>
         <div className="container">
             <h2>Gracias por tu compra</h2>

@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { cartContext } from "../../context/cartContext"
-import {SinProds} from '../noProd/SinProds'
+import {SinProds} from '../mensajes/SinProds'
 import { CartList } from "../CartList/CartList"
 
 export const Cart = ()=>{

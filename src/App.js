@@ -5,7 +5,8 @@ import { Contacto } from './components/pages/Contacto';
 import {Galeria} from './components/pages/Galeria';
 import {UnPocoDeMi} from './components/pages/UnPocoDeMi';
 import {EstilosNail}from './components/pages/EstilosNail'
-import { CartProvider} from './context/cartContext'
+import { CartProvider } from './context/cartContext'
+import {OrdenProvider} from './context/ordenContext'
 import {ItemListContainer} from './components/ItemlListContainer/ItemListContainer'
 import {ItemDetailContainer} from './components/ItemDetailContainer/ItemDetailContainer'
 import {Cart} from './components/Cart/Cart'
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <CartProvider>
+    <OrdenProvider>
       <BrowserRouter>
       <Encabezado></Encabezado>
       <Routes>
@@ -38,6 +40,7 @@ function App() {
       </Routes>
       </BrowserRouter>
       <Footer/>
+      </OrdenProvider>
     </CartProvider>
   );
 }
