@@ -1,11 +1,9 @@
 import {useEffect, useState} from "react"
-//import { pedirDatos } from "../../helpers/accesoADatos"
 import { ItemList } from "../ItemList/ItemList"
 import { useParams } from "react-router-dom"
 import './ItemListContainer.css'
 import { Loader } from "../Loader/Loader"
 import {SinProds} from '../mensajes/SinProds'
-//import { usePedirDatos } from "../../helpers/usePedirDatos"
 import {db} from "../../data/config"
 import {collection, getDocs, query,where} from "firebase/firestore"
 

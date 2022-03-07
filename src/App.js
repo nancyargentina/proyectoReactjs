@@ -13,6 +13,7 @@ import {Cart} from './components/Cart/Cart'
 import Footer from './components/Footer/Footer';
 import{NavBar} from './components/navbar/NavBar'
 import { Checkout } from './components/Checkout/Checkout';
+
 function App() {
 
   return (
