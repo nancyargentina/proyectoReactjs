@@ -1,6 +1,5 @@
 import { useEffect,useState } from "react"
 import { useParams } from "react-router-dom"
-//import { pedirDatosporId } from "../../helpers/accesoADatos"
 import {ItemDetail} from '../ItemDetail/ItemDetail'
 import {db} from "../../data/config"
 import {doc, getDoc} from "firebase/firestore"
@@ -20,19 +19,15 @@ export const ItemDetailContainer = () =>{
             .then((doc)=>{
                 setProducto({id:doc.id,...doc.data()})
             })
-        /*pedirDatosporId(itemId)
-            .then((res)=>{
-                setProducto( res )
-            })*/
             .finally(()=>{setCargando(false)})
 
     },[])
     return (
-        <>
+        
+        <div className="main">
         {
             cargando ?  <Loader />: <ItemDetail {...producto}/>
         }
-        
-    </>
+        </div>
     )
 }

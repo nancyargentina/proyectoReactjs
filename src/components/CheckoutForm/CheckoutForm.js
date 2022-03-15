@@ -5,11 +5,11 @@ import { checkoutSchema } from './checkoutSchema'
 import { BsExclamationTriangle, BsCheckCircleFill } from "react-icons/bs";
 import { cartContext } from '../../context/cartContext';
 import { generarOrden} from "../../helpers/GenerarOrden"
-import {ordenContext} from '../../context/ordenContext'
+
 
 export const CheckoutForm=()=>{
     const { cart, totalCart,clear }=useContext(cartContext)
-	const { addOrdenId }= useContext(ordenContext)
+	
     const initialValues = {
 		name: '',
 		tel: '',
@@ -21,7 +21,7 @@ export const CheckoutForm=()=>{
 		<div className="container mx-auto p-2">
 			<h3>Completa los datos para confirmar la compra</h3>
 			<hr/>
-        	<Formik initialValues={initialValues} validationSchema={checkoutSchema} onSubmit={(values) => {	generarOrden(values, cart, totalCart, clear,addOrdenId)}}>
+        	<Formik initialValues={initialValues} validationSchema={checkoutSchema} onSubmit={(values) => {	generarOrden(values, cart, totalCart, clear)}}>
 				{(formik) => (
 					<Form className='container mx-auto col-6'>
 						<div className="form-group row">
@@ -32,7 +32,7 @@ export const CheckoutForm=()=>{
 						</div>
 						<div className="form-group row">
 							<label htmlFor="tel" className='col-form-label'>Teléfono </label>
-							<Field className={(formik.errors.tel && formik.touched.tel) ? 'form-control is-invalid' : 'form-control'} type="text" id="tel" name="tel" placeholder="Escribe aquí tu apellido"/>
+							<Field className={(formik.errors.tel && formik.touched.tel) ? 'form-control is-invalid' : 'form-control'} type="text" id="tel" name="tel" placeholder="Escribe aquí tu teléfono"/>
 							<ErrorMessage name="tel">{msg => <span className="invalid-feedback"><BsExclamationTriangle/>{msg}</span>}</ErrorMessage>
 						</div>
 						<div className="form-group row">

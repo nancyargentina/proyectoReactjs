@@ -1,10 +1,11 @@
 import {collection, addDoc, Timestamp, writeBatch, documentId, getDocs, query, where } from "firebase/firestore"
 import { db } from '../data/config'
-//import { SinStock } from '../components/Checkout/sinStock'
+
+import Swal from "sweetalert2"
 
 //funcion que crea la orden y almacena en database
-export  const generarOrden= async(values, cart, totalCart, clear, addOrdenId)=>{
-    
+export  const generarOrden= async(values, cart, totalCart, clear)=>{
+
     //creo una orden
     const nuevaOrden= {
         comprador: values,
@@ -47,12 +48,12 @@ export  const generarOrden= async(values, cart, totalCart, clear, addOrdenId)=>{
         addDoc(snapCollectionOrdenes,nuevaOrden)
             .then( (ordenCreada)=>{
                 batch.commit()
-                addOrdenId(ordenCreada.id)
-                clear()
+                Swal.fire('Gracias por tu compra',`Orden número: ${ordenCreada.id}`,'success')
             })
             .catch((error)=>{
                 console.log(error)
             })
+            .finally(clear() )
     }
     else {
         //si faltan stock muestro los faltantes

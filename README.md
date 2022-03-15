@@ -19,6 +19,9 @@ Utilizado para formatos rápidos de la página.
 Se utilizó para formatear y manipular el formulario del checkout.
 -[Yup](https://github.com/jquense/yup)
 Se utilizó para las validaciones en los inputs del formulario.
+-[Sweetalert2](https://sweetalert2.github.io/)
+Se utilizó para mostrar el número de ordende compra.
+
 
 ---
 
