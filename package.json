@@ -1,5 +1,5 @@
 {
-  "homepage":"https://nancyargentina.github.io/reactjs-nailart-tienda-martineznc",
+
   "name": "nailart-tienda",
   "version": "0.1.0",
   "private": true,
@@ -19,8 +19,6 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "predeploy":"npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -45,7 +43,6 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^3.2.3",
     "mini-css-extract-plugin": "2.4.5"
   }
 }
