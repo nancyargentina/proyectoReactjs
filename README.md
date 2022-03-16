@@ -26,7 +26,7 @@ Se utilizó este paquete para instalar el sitio en github pages.
 
 ### Dónde ver el sitio compilado:
 
-https://https://zoenailart.com.ar/
+https://zoenailart.com.ar/
 
 ---
 
